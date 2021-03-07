@@ -8,4 +8,7 @@ Master Thesis of ,DIMA, TU Berlin->An Empirical Study of  Online Sentiment Analy
 4. Kafka
 5. Redis server
 
-# 
+## Folder Guide
+1. Pyflink_demo/Tweets_clean_demo -> Demo for batch-based Tweets preprocessing for Sentiment Analysis on FLink
+2. xxxxxx
+3. xxxxxx
