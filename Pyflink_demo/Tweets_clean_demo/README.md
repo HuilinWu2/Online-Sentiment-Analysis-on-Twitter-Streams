@@ -1,4 +1,4 @@
-# Demo for batch based tweets cleanning using udf in pyflink
+# Demo for batch-based tweets cleanning using udf in pyflink
 
 ## Description
 Input:200 raw tweets --> tweets.text
