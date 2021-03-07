@@ -6,8 +6,8 @@ output: tweets that are cleaned for SA --> tweets_clean.csv
 
 
 ## Environment Requirement:
-Python 3.7+
-Flink 1.11
+1. Python 3.7+
+2. Flink v1.11
 
 ## Quick start:
 1. start flink: `flink ./start-cluster.sh`
