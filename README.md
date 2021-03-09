@@ -17,10 +17,10 @@ Master Thesis of ,[DIMA](https://www.dima.tu-berlin.de/menue/database_systems_an
 [Sentiment140](http://cs.stanford.edu/people/alecmgo/trainingandtestdata.zip)
 
 ## Folder Guide
-1. Pyflink_demo
+### 1. Pyflink_demo
 * Tweets_clean_demo: Demo for batch-based Tweets preprocessing for Sentiment Analysis on FLink
 * Streaming_demo_Sentiment_Analysis: Demo for stream-based Tweets preprocessing & online Sentiment Analysis model on Flink
-2. OSA_algorithms
+### 2. OSA_algorithms
 * Algorithms of incremental Sentiment Analysis
-3. Python_small_job
+### 3. Python_small_job
 * Python file of various developing note
