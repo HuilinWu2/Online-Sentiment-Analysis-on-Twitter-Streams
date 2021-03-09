@@ -1,5 +1,7 @@
 # Online-Sentiment-Analysis-on-Twitter-Streams
 Master Thesis offered by [DIMA](https://www.dima.tu-berlin.de/menue/database_systems_and_information_management_group/?no_cache=1), TU Berlin->An Empirical Study of  Online Sentiment Analysis on Twitter Streams 
+* Author: Huilin Wu
+* Advisor: [Dr. Shuhao Zhang](https://github.com/ShuhaoZhangTony)
 ## Motivation
 * Most existing studies regarding Sentiment Analysis are based on offline batch-based learning mechanisms. Meanwhile, many stream processing systems have been proposed, but they are not specifically designed for online learning tasks, such as online Sentiment Analysis. As a result, it still remains an open and challenging question of how to efficiently perform Sentiment Analysis for real-time streaming data, e.g., ongoing Twitter Streams.
 * The goal of this thesis is to empirically evaluate various online algorithms for Sentiment Analysis on Twitter Streams by implementing them on DSPS (Data Stream Processing System) for practical application.
