@@ -10,5 +10,5 @@ output: tweets that are cleaned for SA --> tweets_clean.csv
 2. Flink v1.11
 
 ## Quick start:
-1. start flink: `flink ./start-cluster.sh`
+1. start flink: `./bin ./start-cluster.sh`
 2. Run in terminal: `python demo_tweets_clean.py`
