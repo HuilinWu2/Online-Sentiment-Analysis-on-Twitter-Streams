@@ -1,5 +1,5 @@
 # Online-Sentiment-Analysis-on-Twitter-Streams
-Master Thesis offered by [DIMA](https://www.dima.tu-berlin.de/menue/database_systems_and_information_management_group/?no_cache=1), TU Berlin->An Empirical Study of  Online Sentiment Analysis on Twitter Streams 
+Master Thesis "An Empirical Study of  Online Sentiment Analysis on Twitter Streams " offered by [DIMA](https://www.dima.tu-berlin.de/menue/database_systems_and_information_management_group/?no_cache=1), TU Berlin
 * Author: Huilin Wu
 * Advisor: [Dr. Shuhao Zhang](https://github.com/ShuhaoZhangTony)
 ## Motivation
