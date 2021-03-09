@@ -18,7 +18,7 @@ Master Thesis offered by [DIMA](https://www.dima.tu-berlin.de/menue/database_sys
 1.6 million labeled Tweets:
 [Sentiment140](http://cs.stanford.edu/people/alecmgo/trainingandtestdata.zip)
 
-## Folder Guide
+## Quick Guide
 ### 1. Pyflink_demo
 * [Tweets_clean_demo](https://github.com/HuilinWu2/Online-Sentiment-Analysis-on-Twitter-Streams/tree/main/Pyflink_demo/Tweets_clean_demo): Demo for batch-based Tweets preprocessing for Sentiment Analysis on FLink
 * [Streaming_demo_Sentiment_Analysis](https://github.com/HuilinWu2/Online-Sentiment-Analysis-on-Twitter-Streams/tree/main/Pyflink_demo/Streaming_demo_Sentiment_Analysis): Demo for stream-based Tweets preprocessing & online Sentiment Analysis model on Flink
