@@ -12,7 +12,7 @@ Master Thesis "An Empirical Study of  Online Sentiment Analysis on Twitter Strea
 3. Python 3.7
 4. Java 8
 5. Kafka
-6. Redis server
+6. Redis server v4.0.9
 
 ## DataSource
 1.6 million labeled Tweets:
