@@ -7,7 +7,7 @@ Master Thesis "An Empirical Study of  Online Sentiment Analysis on Twitter Strea
 * The goal of this thesis is to empirically evaluate various online algorithms for Sentiment Analysis on Twitter Streams by implementing them on DSPS (Data Stream Processing System) for practical application.
 
 ## Environment Requirement
-1. Flink v1.11
+1. Flink v1.12
 2. Scala v2.11
 3. Python 3.7
 4. Java 8
