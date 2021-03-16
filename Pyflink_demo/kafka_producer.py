@@ -6,20 +6,17 @@ from datetime import datetime
 from kafka import KafkaProducer
 
 #=====================================================
-max_msg_per_second = 10  
+msg_per_second = 10  
 topic = "stream_tweets"  # kafka topic
 bootstrap_servers = ['localhost:9092']
 
-
 def write_data():
-    twitter_stream= []
     tweets = []
     label = []
     all_tweets = open("twitter_140.txt")  
     for twts in all_tweets:  
         tweets.append(twts.replace('\n',''))
     label = [0]*200+[4]*200
-
 
     all_x = tweets
     all_y = label
@@ -31,17 +28,15 @@ def write_data():
     )
 
     while True:
-
         for x, y in zip(all_x, all_y):
             # produce data and send to kafka
             cur_data = {
                 "ts": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "x": x.tolist(),
+                "x": x,
                 "actual_y": int(y)
             }
             producer.send(topic, value=cur_data)
+            sleep(1 / msg_per_second)
 
-            sleep(1 / max_msg_per_second)
-
-
-write_data()
+if __name__ == '__main__':
+    write_data()
