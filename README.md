@@ -11,7 +11,7 @@ Master Thesis "An Empirical Study of  Online Sentiment Analysis on Twitter Strea
 2. Scala v2.11
 3. Python 3.7
 4. Java 8
-5. Kafka
+5. Kafka 2.13
 6. Redis server v4.0.9
 
 ## DataSource
