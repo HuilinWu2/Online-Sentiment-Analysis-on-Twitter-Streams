@@ -62,7 +62,7 @@ all_tweets = open("twitter_140.txt")
 for twts in all_tweets:  
     tweets.append(twts.replace('\n',''))
 for i in range(len(tweets)):
-    train_data.append((list(textvectorization(textprocess(tweets))[i]),label[i])) 
+    train_data.append((list(textvectorization(textprocess(tweets[i]))),label[i])) 
 
 '''
 Data Form:
@@ -71,7 +71,7 @@ tuple:(Vectorized_train_data, label)
 # Naive Bayes model
 # pre-trained model to avoid 'cold start'
 BNB = BernoulliNB()
-BNB.fit(X_train[:2],label[:2])
+BNB.fit(train_data[:2],label[:2])
 # save the model to redis
 r = redis.StrictRedis(host='localhost', port=6379, db=0)
 try:
