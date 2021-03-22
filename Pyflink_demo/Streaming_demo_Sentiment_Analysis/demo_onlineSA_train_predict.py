@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+# -*- coding: utf-8 -*-
+
 # Flink
 from pyflink.common.serialization import SimpleStringEncoder
 from pyflink.common.typeinfo import Types
@@ -31,39 +33,34 @@ sys.path.append(rootPath)
 
 #===================================== Code start here ===========================================#
 
-# tweets preprocessing/cleanning
-def textprocess(text):
-    corpus = []
-    for i in range(0,400):
-        clean_text = re.sub(r'\W', ' ', str(text[i]))
-        clean_text = re.sub(r'^br$', ' ', clean_text)
-        clean_text = re.sub(r'\s+^br$\s+', ' ', clean_text)
-        clean_text = re.sub(r'\s+[a-z]\s+', ' ', clean_text)
-        clean_text = re.sub(r'^b\s+', ' ', clean_text)
-        clean_text = re.sub(r'\s+', ' ', clean_text) 
-        clean_text = clean_text.lower()    
-        corpus.append(clean_text)
-    return corpus
 
-#
-def textvectorization(text):
-    countvector    = CountVectorizer(stop_words= stopwords.words('english')) 
-    tfidftransform = TfidfTransformer()
-    X = countvector.fit_transform(text).toarray() 
-    X_train = tfidftransform.fit_transform(X).toarray()
-    return X_train
 
 #Twitter Stream as Data source
 tweets = []
 train_data = []
 label = [0]*200+[4]*200
-all_tweets = open("twitter_140.txt")  
-
+all_tweets = open("twitter_140.txt") 
 for twts in all_tweets:  
     tweets.append(twts.replace('\n',''))
-for i in range(len(tweets)):
-    train_data.append((list(textvectorization(textprocess(tweets[i]))),label[i])) 
+    
+corpus = []
+for i in range(0,400):
+    clean_text = re.sub(r'\W', ' ', str(tweets[i]))
+    clean_text = re.sub(r'^br$', ' ', clean_text)
+    clean_text = re.sub(r'\s+^br$\s+', ' ', clean_text)
+    clean_text = re.sub(r'\s+[a-z]\s+', ' ', clean_text)
+    clean_text = re.sub(r'^b\s+', ' ', clean_text)
+    clean_text = re.sub(r'\s+', ' ', clean_text) 
+    clean_text = clean_text.lower()    
+    corpus.append(clean_text)  
 
+countvector    = CountVectorizer(stop_words= stopwords.words('english')) 
+tfidftransform = TfidfTransformer()
+X = countvector.fit_transform(corpus).toarray() 
+X_train = tfidftransform.fit_transform(X).toarray()
+
+for i in range(len(tweets)):
+    train_data.append((list(X_train[i]),label[i]))
 '''
 Data Form:
 tuple:(Vectorized_train_data, label)
@@ -71,7 +68,7 @@ tuple:(Vectorized_train_data, label)
 # Naive Bayes model
 # pre-trained model to avoid 'cold start'
 BNB = BernoulliNB()
-BNB.fit(train_data[:2],label[:2])
+BNB.fit([train_data[0][0],train_data[1][0]],label[:2])
 # save the model to redis
 r = redis.StrictRedis(host='localhost', port=6379, db=0)
 try:
