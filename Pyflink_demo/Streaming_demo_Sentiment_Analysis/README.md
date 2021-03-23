@@ -10,3 +10,6 @@
 2. Run the demo: (try both, under where your codes are) 
 * in terminal: `python xxxxx.py`
 * on localhost: `flink run -py xxxxx.py` and go to http://localhost:8081/ to see what happened
+
+## Current Problems
+Metrics adding
